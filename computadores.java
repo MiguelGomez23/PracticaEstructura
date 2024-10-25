@@ -67,7 +67,7 @@ public class computadores {
             System.out.println("2. Windows 10");
             System.out.println("3. Windows 11");
             System.out.println();
-            if (scanner.hasNextInt(opt)) {
+            if (scanner.hasNextInt()) {
                 opt = scanner.nextInt();
                 switch (opt) {
                     case 1:
@@ -101,7 +101,7 @@ public class computadores {
             System.out.println("Seleccione el procesador que desea:");
             System.out.println("1. AMD Ryzen");
             System.out.println("2. Intel® Core™ i5");
-            if (scanner.hasNextInt(opt)) {
+            if (scanner.hasNextInt()) {
                 opt = scanner.nextInt();
                 switch (opt) {
                     case 1:
