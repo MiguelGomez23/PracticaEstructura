@@ -56,6 +56,74 @@ public class computadores {
         Procesador = procesador;
     }
 
+    public void SeleccionarMarca() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int opt = 0;
+        do {
+            System.out.println("Seleccione la marca que desea:");
+            System.out.println("1. Acer");
+            System.out.println("2. Dell");
+            System.out.println("3. Asus");
+            System.out.println();
+            if (scanner.hasNextInt()) {
+                opt = scanner.nextInt();
+                switch (opt) {
+                    case 1:
+                        Marca = "Acer";
+                        break;
+                    case 2:
+                        Marca = "Dell";
+                        break;
+                    case 3:
+                        Marca = "Asus";
+                        break;
+                    default:
+                        System.out.println("Opción inválida, por favor ingrese del 1 al 3\n");
+                        break;
+                }
+            } else {
+                System.out.println("Ingrese un número entero\n");
+                scanner.next();
+            }
+        } while (opt < 1 || opt > 3);
+
+        System.out.println("Marca seleccionada: " + Marca);
+        System.out.println();
+    }
+
+    public void Seleccionartamaño() {
+
+        Scanner sc = new Scanner(System.in);
+        float Tamano = 0.0f;
+
+        System.out.println("Ingrese el tamaño");
+
+        while (!sc.hasNextFloat()) {
+            System.out.println("Opcion no valida, por favor ingrese un tamaño válido\n");
+            sc.next();
+        }
+        Tamano = sc.nextFloat();
+        System.out.println("El tamaño de su computador es: " + Tamano);
+        System.out.println();
+    }
+
+    public void SeleccionarPrecio() {
+
+        Scanner sc = new Scanner(System.in);
+        float Precio = 0.0f;
+
+        System.out.println("Ingrese el precio");
+        while (!sc.hasNextFloat()) {
+            System.out.println("Opcion no valida, por favor ingrese un precio válido\n");
+            sc.next(); // Descartar entrada inválida
+        }
+        Precio = sc.nextFloat();
+        System.out.println("El precio de su computador es: " + Precio);
+        System.out.println();
+    }
+
     public void SeleccionarSO() {
 
         Scanner scanner = new Scanner(System.in);
@@ -80,16 +148,17 @@ public class computadores {
                         SistemaOperativo = "Windows 11";
                         break;
                     default:
-                        System.out.println("Opción inválida, por favor ingrese del 1 al 3");
+                        System.out.println("Opción inválida, por favor ingrese del 1 al 3\n");
                         break;
                 }
             } else {
-                System.out.println("Ingrese un número entero");
+                System.out.println("Ingrese un número entero\n");
                 scanner.next();
             }
         } while (opt < 1 || opt > 3);
 
         System.out.println("Sistema operativo seleccionado: " + SistemaOperativo);
+        System.out.println();
     }
 
     public void SeleccionarPr() {
@@ -101,6 +170,7 @@ public class computadores {
             System.out.println("Seleccione el procesador que desea:");
             System.out.println("1. AMD Ryzen");
             System.out.println("2. Intel® Core™ i5");
+            System.out.println();
             if (scanner.hasNextInt()) {
                 opt = scanner.nextInt();
                 switch (opt) {
@@ -111,15 +181,16 @@ public class computadores {
                         Procesador = "Intel® Core™ i5";
                         break;
                     default:
-                        System.out.println("Opción inválida, ingrese 1 o 2");
+                        System.out.println("Opción inválida, ingrese 1 o 2\n");
                         break;
                 }
             } else {
-                System.out.println("Ingrese un número entero");
+                System.out.println("Ingrese un número entero\n");
                 scanner.next();
             }
         } while (opt < 1 || opt > 2);
 
         System.out.println("Procesador seleccionado: " + Procesador);
+        System.out.println();
     }
 }

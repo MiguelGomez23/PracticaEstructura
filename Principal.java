@@ -51,43 +51,41 @@ public class Principal {
                                     case 1:
                                         System.out.println("Solicitar prestamo de equipo.\n");
                                         listaedi = objMetodosedi.ImportarArchivo();
-                                        listatab = objMetodostab.ImportarArchivo();
-                                        
-                                        listaedi = objMetodosedi.LlenarLista(listaedi);
-                                        System.out.println();
-                                        listatab = objMetodostab.LlenarLista(listatab);
 
-                                        
-                                        objMetodosedi.ExportarArchivo(listaedi);
+                                        // listatab = objMetodostab.ImportarArchivo();
+                                        // listaedi = objMetodosedi.LlenarLista(listaedi);
+                                        // System.out.println();
+                                        // listatab = objMetodostab.LlenarLista(listatab);
+                                        // objMetodosedi.ExportarArchivo(listaedi);
                                         break;
 
                                     case 2:
                                         System.out.println("Modificar prestamo de equipo.\n");
                                         listaedi = objMetodosedi.ImportarArchivo();
-                                        //listaedi = objMetodosedi.ImportarArchivo();
+                                        // listaedi = objMetodosedi.ImportarArchivo();
                                         Metodosedi objmetodos = new Metodosedi();
                                         String SerialBuscar = "";
                                         System.out.println("Ingrese la cédula");
                                         SerialBuscar = sc.next();
                                         System.out.println();
-                                        prestamosediseño result = objmetodos.Buscar(listaedi, SerialBuscar);
+                                        prestamosediseño resulta = objmetodos.Buscar(listaedi, SerialBuscar);
 
-                                        if (result == null) {                                                                               
+                                        if (resulta == null) {
                                             System.out.println();
                                             System.out.println("El registro no existe");
                                             System.out.println();
 
                                         } else {
-                                            System.out.println("Cedula: " + " " + result.getCedula());
-                                            System.out.println("Nombre: " + " " + result.getNombre());
-                                            System.out.println("Apellido: " + " " + result.getApellido());
-                                            System.out.println("Telefono: " + " " + result.getTelefono());
+                                            System.out.println("Cedula: " + " " + resulta.getCedula());
+                                            System.out.println("Nombre: " + " " + resulta.getNombre());
+                                            System.out.println("Apellido: " + " " + resulta.getApellido());
+                                            System.out.println("Telefono: " + " " + resulta.getTelefono());
                                             System.out.println(
-                                                    "Modalidad de estudio: " + " " + result.getModalidadEstudio());
+                                                    "Modalidad de estudio: " + " " + resulta.getModalidadEstudio());
                                             System.out.println(
                                                     "cantidad de Asignaturas: " + " "
-                                                            + result.getCantidadAsignaturas());
-                                            System.out.println("Serial: " + " " + result.getSerial());
+                                                            + resulta.getCantidadAsignaturas());
+                                            System.out.println("Serial: " + " " + resulta.getSerial());
                                             System.out.println("------------------------------- \n");
                                         }
                                         objMetodosedi.ExportarArchivo(listaedi);
@@ -106,22 +104,22 @@ public class Principal {
                                         String SerialBuscarb = "";
                                         System.out.println("Ingrese el serial");
                                         SerialBuscarb = sc.next();
-                                        Tableta resultb = objmetodostab.Buscar(listatab, SerialBuscarb);
+                                        Tableta resultab = objmetodostab.Buscar(listatab, SerialBuscarb);
 
-                                        if (resultb == null) {
-                                            System.out.println("El registro no existe");
+                                        if (resultab == null) {
+                                            System.out.println("El registro no existe\n");
 
                                         } else {
                                             System.out.println();
-                                            System.out.println("Serial: " + " " + resultb.getSerial());
-                                            System.out.println("Marca: " + " " + resultb.getMarca());
-                                            System.out.println("Tamaño: " + " " + resultb.getTamano());
-                                            System.out.println("Precio: " + " " + resultb.getPrecio());
+                                            System.out.println("Serial: " + " " + resultab.getSerial());
+                                            System.out.println("Marca: " + " " + resultab.getMarca());
+                                            System.out.println("Tamaño: " + " " + resultab.getTamano());
+                                            System.out.println("Precio: " + " " + resultab.getPrecio());
                                             System.out.println(
-                                                    "Almacenamiento: " + " " + resultb.getAlmacenamiento());
+                                                    "Almacenamiento: " + " " + resultab.getAlmacenamiento());
                                             System.out.println(
                                                     "Peso: " + " "
-                                                            + resultb.getPeso());
+                                                            + resultab.getPeso());
                                             System.out.println();
                                             System.out.println("------------------------------- \n");
                                         }
@@ -155,11 +153,34 @@ public class Principal {
                             if (sc.hasNextInt()) {
                                 optt = sc.nextInt();
                                 switch (optt) {
-
                                     case 1:
                                         System.out.println("Solicitar prestamo de equipo.\n");
                                         listaeing = objMetodoseing.ImportarArchivo();
+                                        Metodoseing objMetodoseingb = new Metodoseing();
                                         computadores cp = new computadores();
+                                        String CedulaBuscarb = "";
+                                        System.out.println("Ingrese su cedula");
+                                        CedulaBuscarb = sc.next();
+                                        prestamoseingenieria resulta = objMetodoseingb.Buscar(listaeing, CedulaBuscarb);
+
+                                        if (resulta == null) {
+                                            System.out.println("El registro no existe\n");
+                                            listaeing = objMetodoseing.LLenarLista(listaeing);
+                                        } else {
+                                            System.out.println();
+                                            System.out.println("Cedula: " + " " + resulta.getCedula());
+                                            System.out.println("Nombre: " + " " + resulta.getNombre());
+                                            System.out.println("Apellido: " + " " + resulta.getApellido());
+                                            System.out.println("Telefono: " + " " + resulta.getTelefono());
+                                            System.out.println("Numero de semestre: " + " " + resulta.getNumSemestre());
+                                            System.out.println("Promedio: " + " " + resulta.getPromedio());
+                                            System.out.println("Serial:" + " " + resulta.getSerial());
+                                            System.out.println();
+                                            System.out.println("------------------------------- \n");
+                                        }
+                                        cp.SeleccionarMarca();
+                                        cp.Seleccionartamaño();
+                                        cp.SeleccionarPrecio();
                                         cp.SeleccionarSO();
                                         cp.SeleccionarPr();
                                         break;
@@ -172,6 +193,8 @@ public class Principal {
                                     case 3:
                                         System.out.println("Regresar el equipo.\n");
                                         listaeing = objMetodoseing.ImportarArchivo();
+                                        EstudiantesIngenieria ei = new EstudiantesIngenieria();
+                                        // ei.Validacion();
                                         break;
 
                                     case 4:
@@ -184,15 +207,16 @@ public class Principal {
                                         computadores result = objMetodoscompb.Buscar(listacomp, SerialBuscarb);
 
                                         if (result == null) {
-                                            System.out.println("El registro no existe");
+                                            System.out.println("El registro no existe\n");
                                         } else {
                                             System.out.println();
-                                            System.out.println("Cedula: " + " " + result.getSerial());
-                                            System.out.println("Nombre: " + " " + result.getMarca());
-                                            System.out.println("Apellido: " + " " + result.getTamano());
-                                            System.out.println("Telefono: " + " " + result.getPrecio());
-                                            System.out.println("Numero de semestre: " + " " + result.getSistemaOperativo());
-                                            System.out.println("Promedio: " + " " + result.getProcesador());
+                                            System.out.println("Serial: " + " " + result.getSerial());
+                                            System.out.println("Marca: " + " " + result.getMarca());
+                                            System.out.println("Tamaño: " + " " + result.getTamano());
+                                            System.out.println("Precio: " + " " + result.getPrecio());
+                                            System.out.println(
+                                                    "Sistema Operativo: " + " " + result.getSistemaOperativo());
+                                            System.out.println("Procesador: " + " " + result.getProcesador());
                                             System.out.println();
                                             System.out.println("------------------------------- \n");
                                         }
@@ -206,7 +230,6 @@ public class Principal {
                                         System.out.println("Opción no válida, seleccione del 1 al 5.\n");
                                         break;
                                 }
-                                break;
                             } else {
                                 System.out.println("Por favor, ingrese un número entero.\n");
                                 sc.next();
@@ -220,21 +243,18 @@ public class Principal {
                         est = sc.nextInt();
                         if (est == 1) {
                             System.out.println();
-                        System.out.println("          TABLETS\n");
-                        System.out.println();
-                        objMetodostab.MostrarLista(listatab);
-                        System.out.println();
-                            
+                            System.out.println("          TABLETS\n");
+                            System.out.println();
+                            objMetodostab.MostrarLista(listatab);
+                            System.out.println();
+
                         } else {
                             System.out.println();
                             System.out.println("          COMPUTADORES\n");
                             System.out.println();
-                        objMetodoscomp.MostrarLista(listacomp);
-                        System.out.println();
+                            objMetodoscomp.MostrarLista(listacomp);
+                            System.out.println();
                         }
-                        
-                        
-                        
                         break;
 
                     case 4:
@@ -243,11 +263,11 @@ public class Principal {
                         break;
 
                     default:
-                        System.out.println("Opción no válida. Por favor, elija una opción de 1 a 4.");
+                        System.out.println("Opción no válida. Por favor, elija una opción de 1 a 4.\n");
                         break;
                 }
             } else {
-                System.out.println("Por favor, ingrese un número entero.");
+                System.out.println("Por favor, ingrese un número entero.\n");
                 sc.next();
             }
         } while (opc != 4);

@@ -15,7 +15,7 @@ public class Metodoscomp {
             // Verificamos si ya existe
             computadores a = m.Buscar(lista, Serial);
             if (a != null && a.getSerial() != null) {
-                System.out.println("El registro ya existe, por favor ingrese otro serial");
+                System.out.println("El registro ya existe, por favor ingrese otro serial\n");
                 continue; // Continuamos con el ciclo en lugar de romperlo
             }
     

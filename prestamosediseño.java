@@ -62,5 +62,4 @@ public class prestamosediseño {
     public void setSerial(String serial) {
         Serial = serial;
     }
-
 }

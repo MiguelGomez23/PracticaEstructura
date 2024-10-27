@@ -57,6 +57,32 @@ public class Tableta {
         Peso = peso;
     }
 
+    public void Seleccionartamaño() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el tamaño");
+        while (!sc.hasNextFloat()) {
+            System.out.println("Opcion no valida, por favor ingrese un tamaño válido");
+            sc.next();
+        }
+        System.out.println("El tamaño de su tableta es: " + Tamano);
+        System.out.println();
+    }
+
+    public void SeleccionarPrecio() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el precio");
+        while (!sc.hasNextFloat()) {
+            System.out.println("Opcion no valida, por favor ingrese un precio válido");
+            sc.next(); // Descartar entrada inválida
+        }
+        System.out.println("El precio de su tableta es: " + Precio);
+        System.out.println();
+    }
+
     public void SeleccionarAlmacenamiento() {
 
         Scanner scanner = new Scanner(System.in);
@@ -92,5 +118,42 @@ public class Tableta {
 
         // scanner.close();
         System.out.println("Almacenamiento seleccionado: " + Almacenamiento);
+    }
+
+    public void SeleccionarMarca() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int opt = 0;
+        do {
+            System.out.println("Seleccione la marca que desea:");
+            System.out.println("1. Acer");
+            System.out.println("2. Dell");
+            System.out.println("3. Asus");
+            System.out.println();
+            if (scanner.hasNextInt()) {
+                opt = scanner.nextInt();
+                switch (opt) {
+                    case 1:
+                        Marca = "Acer";
+                        break;
+                    case 2:
+                        Marca = "Dell";
+                        break;
+                    case 3:
+                        Marca = "Asus";
+                        break;
+                    default:
+                        System.out.println("Opción inválida, por favor ingrese del 1 al 3");
+                        break;
+                }
+            } else {
+                System.out.println("Ingrese un número entero");
+                scanner.next();
+            }
+        } while (opt < 1 || opt > 3);
+
+        System.out.println("Marca seleccionada: " + Marca);
+        System.out.println();
     }
 }
