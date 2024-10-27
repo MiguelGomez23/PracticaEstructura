@@ -79,8 +79,10 @@ public class computadores {
                     case 3:
                         Marca = "Asus";
                         break;
+                    case 4:
+                        Marca = "Lenovo";
                     default:
-                        System.out.println("Opción inválida, por favor ingrese del 1 al 3\n");
+                        System.out.println("Opción inválida, por favor ingrese del 1 al 4\n");
                         break;
                 }
             } else {
@@ -147,6 +149,7 @@ public class computadores {
                     case 3:
                         SistemaOperativo = "Windows 11";
                         break;
+
                     default:
                         System.out.println("Opción inválida, por favor ingrese del 1 al 3\n");
                         break;
@@ -169,7 +172,7 @@ public class computadores {
         do {
             System.out.println("Seleccione el procesador que desea:");
             System.out.println("1. AMD Ryzen");
-            System.out.println("2. Intel® Core™ i5");
+            System.out.println("2. Intel Core i5");
             System.out.println();
             if (scanner.hasNextInt()) {
                 opt = scanner.nextInt();

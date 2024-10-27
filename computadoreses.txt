@@ -2,9 +2,9 @@
 Serial:  WS123PP456
 Marca:  Dell
 Tamano:  123.0
-Precio:  750.5
+Precio:  123
 SistemaOperativo:  Windows 10
-Procesador:  Intel Core i7
+Procesador:  Intel Core i5
 ---------------------------------------
 
 Serial:  8989

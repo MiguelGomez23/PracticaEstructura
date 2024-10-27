@@ -95,9 +95,10 @@ public class Metodoseing {
         }
     }
 
-    public void ExportarArchivo(LinkedList<prestamoseingenieria> lista) {
+    public LinkedList<prestamoseingenieria> ExportarArchivo(LinkedList<prestamoseingenieria> lista) {
         ExportarArchivoeing e = new ExportarArchivoeing();
         e.exportarArchivo(lista);
+        return lista;
     }
 
     public LinkedList<prestamoseingenieria> ImportarArchivo() {

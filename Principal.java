@@ -158,10 +158,17 @@ public class Principal {
                                         listaeing = objMetodoseing.ImportarArchivo();
                                         Metodoseing objMetodoseingb = new Metodoseing();
                                         computadores cp = new computadores();
-                                        String CedulaBuscarb = "";
+                                        String CedulaBuscar = "";
+                                        String MarcaBuscar = "";
+                                        Float TamanoBuscar = (float) 0.0;
+                                        Float PrecioBuscar = (float) 0.0;
+                                        String SistemaOperativoBuscar = "";
+                                        String ProcesadorBuscar = "";
+
                                         System.out.println("Ingrese su cedula");
-                                        CedulaBuscarb = sc.next();
-                                        prestamoseingenieria resulta = objMetodoseingb.Buscar(listaeing, CedulaBuscarb);
+                                        CedulaBuscar = sc.next();
+                                    
+                                        prestamoseingenieria resulta = objMetodoseingb.Buscar(listaeing, CedulaBuscar);
 
                                         if (resulta == null) {
                                             System.out.println("El registro no existe\n");
@@ -179,10 +186,32 @@ public class Principal {
                                             System.out.println("------------------------------- \n");
                                         }
                                         cp.SeleccionarMarca();
+                                        MarcaBuscar = sc.nextLine();
                                         cp.Seleccionartamaño();
+                                        TamanoBuscar = sc.nextFloat();
+                                        sc.nextLine();
                                         cp.SeleccionarPrecio();
+                                        PrecioBuscar = sc.nextFloat();
+                                        sc.nextLine();
                                         cp.SeleccionarSO();
+                                        SistemaOperativoBuscar = sc.nextLine();
                                         cp.SeleccionarPr();
+                                        ProcesadorBuscar = sc.next();
+
+                                        computadores resultamarca = objMetodoscomp.BuscarPorMarca(listacomp, MarcaBuscar);
+                                        computadores resultatamano = objMetodoscomp.BuscarPorTamano(listacomp, TamanoBuscar);
+                                        computadores resultaprecio = objMetodoscomp.BuscarPorPrecio(listacomp, PrecioBuscar);
+                                        computadores resultaso = objMetodoscomp.BuscarPorSistemaOPerativo(listacomp, SistemaOperativoBuscar);
+                                        computadores resultaprocesador = objMetodoscomp.BuscarPorProcesador(listacomp, ProcesadorBuscar);
+
+                                        if (resultamarca == null && resultatamano == null && resultaprecio == null && resultaso == null && resultaprocesador == null) {
+                                            System.out.println("No hay ningún computador con esa especificación disponible");
+                                            
+                                        } else {
+                                            
+                                            listaeing = objMetodoseing.ExportarArchivo(listaeing);
+
+                                        }
                                         break;
 
                                     case 2:
@@ -204,7 +233,7 @@ public class Principal {
                                         String SerialBuscarb = "";
                                         System.out.println("Ingrese la serial que desea buscar");
                                         SerialBuscarb = sc.next();
-                                        computadores result = objMetodoscompb.Buscar(listacomp, SerialBuscarb);
+                                        computadores result = objMetodoscompb.BuscarPorSerial(listacomp, SerialBuscarb);
 
                                         if (result == null) {
                                             System.out.println("El registro no existe\n");
